@@ -76,6 +76,14 @@ public class AppConroller {
 	public String login(@PathVariable("loginid")String loginid,@PathVariable("password")String password) {
 		
 		Admin a=appservice.getAdmin(loginid,password);
+		
+		/*
+		 * if(a==null) { Admin a1=new Admin();
+		 * 
+		 * }
+		 */
+		
+		
 		StudentRegistration stu=appservice.getStudent(loginid,password);
 		if(a!=null) {
 			
@@ -99,6 +107,24 @@ public class AppConroller {
 
 		return sdto;
 	}
+	
+	@RequestMapping(value="/feespaid/{studentid}",method = RequestMethod.PUT)
+	public List<StudentRegistrationDto> putStudent(@PathVariable("studentid")int id) {
+		
+		StudentRegistration stu=appservice.getStudentById(id);
+		
+	
+		stu.setFeesPaid("yes");
+		
+		appservice.saveStudent(stu);
+		
+		
+		List<StudentRegistrationDto> sdto=appservice.getStuDto();
+
+		return sdto;
+		
+	}
+	
 	
 	
 	

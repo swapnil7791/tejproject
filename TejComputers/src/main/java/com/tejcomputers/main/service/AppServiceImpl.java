@@ -44,4 +44,15 @@ public class AppServiceImpl implements AppService {
 		return studao.findByLoginidAndPassword(loginid, password);
 	}
 
+	@Override
+	public StudentRegistration getStudentById(int id) {
+		return studao.findById(id).get();
+	}
+
+	@Override
+	public void saveStudent(StudentRegistration stu) {
+		studao.save(stu);
+		
+	}
+
 }

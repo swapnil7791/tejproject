@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TejComputersApplication {
 
 	public static void main(String[] args) {
+	
+
 		SpringApplication.run(TejComputersApplication.class, args);
+		
+		
 	}
 
 }

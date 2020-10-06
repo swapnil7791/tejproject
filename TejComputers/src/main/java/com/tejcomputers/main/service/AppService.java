@@ -18,4 +18,8 @@ public interface AppService {
 
 	StudentRegistration getStudent(String loginid, String password);
 
+	StudentRegistration getStudentById(int id);
+
+	void saveStudent(StudentRegistration stu);
+
 }
